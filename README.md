@@ -58,6 +58,18 @@ Se eligió CSV porque:
 ## 1.3 Transformación de datos
 Para cumplir con el esquema definido en init.sql, se realizan las siguientes transformaciones en data_processor:
 
-    - Corrección de Tipos: Conversión de valores amount a DECIMAL y created_at a TIMESTAMP.
-    - Limpieza de Datos: Eliminación de registros con valores nulos o inválidos.
-    - Estandarización: Normalización de cadenas y eliminación de duplicados.
+### Limpieza de datos:
+
+    - Se eliminaron valores no válidos en company_id (por ejemplo, "*******").
+    - Se reemplazaron valores NaN en company_id con "unknown_company".
+    - Se asignó 0 a amount cuando estaba vacío.
+    - Se eliminaron registros con fechas inválidas en created_at.
+
+### Conversión de tipos:
+
+    - Se convirtió amount a tipo numérico (float) para evitar errores en cálculos.
+    - Se convirtieron created_at y updated_at a tipo datetime para manejar fechas correctamente.
+
+### Filtrado de valores extremos:
+
+    - Se eliminaron valores amount fuera del rango de [1, 10,000,000] para evitar errores en el análisis.
