@@ -39,11 +39,7 @@ Deberías ver los servicios postgres_db y data_processor corriendo.
 ## 1.1 Carga de información
 Los datos proporcionados en el dataset se almacenan en PostgreSQL, utilizando el esquema definido en init.sql.
 
-Se eligió PostgreSQL porque:
-
-    - Permite consultas eficientes y almacenamiento estructurado.
-    - Soporta transacciones ACID para garantizar la integridad de los datos.
-    - Es compatible con herramientas analíticas avanzadas.
+Se utilizó PostgreSQL porque es la base de datos con la que he estado trabajando últimamente y considero que ofrece varias ventajas en la integración con Python, especialmente con SQLAlchemy y Pandas, lo que facilita la manipulación de datos y su almacenamiento eficiente.
 
 ## 1.2 Extracción de Datos
 El archivo load_data.py es el encargado de extraer la data para la base de datos, limpiarla, extraerla en .csv y crear la vista daily_transactions.
